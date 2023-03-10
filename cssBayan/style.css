@@ -11,7 +11,7 @@ html {
 }
 
 .container-meme {
-    max-width: 70em;
+    max-width: 60em;
     min-height: 100vh;
     margin: auto;
     padding: 2em;
@@ -67,7 +67,6 @@ label.meme-title {
     align-items: center;
     margin: auto;
     transition: 0.2s;
-    transform: scale(0.8);
 }
 
 .picture {
@@ -110,9 +109,12 @@ label.meme-title {
 .container-meme:hover .meme-title::after {
     content: '+';
     transform: scale(0.9);
+    font-weight: bold;
 }
 
 .container-meme:hover :checked + .meme-title::after {
+    transform: scale(1);
     content: '×';
+    font-weight: bold;
 }
 
