@@ -61,13 +61,23 @@ label.meme-title {
     transition: 0.2s;
 }
 
+.icon-plus {
+    opacity: 0;
+}
+
+.container-meme:hover  .icon-plus {
+    opacity: 1;
+}
+
 .accordion :checked ~ .accordion-content {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
     transition: 0.2s;
+    overflow: hidden;
 }
+
 
 .picture {
     transition: 0.2s;
@@ -101,20 +111,34 @@ label.meme-title {
     overflow: hidden;
 }
 
+
 :checked + .meme-title {
     color: #000;
     transition: 0.2s all;
 }
 
-.container-meme:hover .meme-title::after {
-    content: '+';
-    transform: scale(0.9);
+.container-meme:hover .meme-title {
+    transition: 0.2s;
     font-weight: bold;
 }
 
-.container-meme:hover :checked + .meme-title::after {
-    transform: scale(1);
-    content: '×';
+.container-meme .meme-title:hover .icon-plus {
+    transform: rotate(315deg);
+    transition: 0.2s ease;
+}
+
+
+.icon-picture {
+    height: 0.8em;
+    width: 0.8em;
+    color: rebeccapurple;
+}
+
+.container-meme :checked + .meme-title  .icon-plus {
+    transform: rotate(315deg);
+    transition: 0.1s ease;
     font-weight: bold;
 }
+
+
 
