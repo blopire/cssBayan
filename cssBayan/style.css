@@ -2,16 +2,12 @@ html {
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
 .container {
     background-color:bisque
 }
 
 .container-meme {
-    max-width: 60em;
+    max-width: 50em;
     min-height: 100vh;
     margin: auto;
     padding: 2em;
@@ -55,9 +51,7 @@ label.meme-title {
 
 .accordion input, .accordion-content {
     display: none;
-    margin: auto;
     text-align: center;
-    transform: scale(0.9);
     transition: 0.2s;
 }
 
@@ -81,7 +75,7 @@ label.meme-title {
 
 .picture {
     transition: 0.2s;
-    transform: scale(1);
+    transform: scale(0.9);
     overflow: hidden;
 }
 
@@ -90,6 +84,8 @@ label.meme-title {
 }
 
 .accordion :hover ~ .accordion-content {
+    height: 100%;
+    transform: scale(0.9);
     display: block;
     overflow: hidden;
 }
