@@ -18,15 +18,12 @@ html {
     font-weight: bold;
     font-family: sans-serif;
     font-size: 2.5em;
-    margin-bottom: 1em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid black;
 }
 
 .accordion {
-    padding-bottom: 0.5em;
     border-bottom: 1px solid black;
-    margin-bottom: 1.5em;
     cursor: pointer;
     color: rebeccapurple;
     transition: 0.2s all;
@@ -45,7 +42,6 @@ label.meme-title {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 0.5em;
     transition: 0.2s;
 }
 
@@ -54,6 +50,8 @@ label.meme-title {
     text-align: center;
     transition: 0.2s;
 }
+
+
 
 .icon-plus {
     opacity: 0;
@@ -64,6 +62,16 @@ label.meme-title {
 }
 
 .accordion :checked ~ .accordion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    transition: 0.2s;
+    overflow: hidden;
+}
+
+
+input .accordion-content:hover {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,13 +115,18 @@ label.meme-title {
     overflow: hidden;
 }
 
+.container-meme:hover .meme-title {
+    color: #000;
+    transition: 0.2s;
+    overflow: hidden;
+}
 
 :checked + .meme-title {
     color: #000;
     transition: 0.2s all;
 }
 
-.container-meme:hover .meme-title {
+.container-meme:hover .meme-title:active {
     transition: 0.2s;
     font-weight: bold;
 }
@@ -125,16 +138,21 @@ label.meme-title {
 
 
 .icon-picture {
-    height: 0.8em;
-    width: 0.8em;
-    color: rebeccapurple;
+    font-size: 2em;
 }
 
 .container-meme :checked + .meme-title  .icon-plus {
     transform: rotate(315deg);
-    transition: 0.1s ease;
-    font-weight: bold;
+    transition: 0.2s ease;
 }
 
+
+input[type=radio]:active~.meme-title {
+    color: rebeccapurple;
+}
+
+.accordion:active {
+    opacity: 0.5;
+}
 
 
