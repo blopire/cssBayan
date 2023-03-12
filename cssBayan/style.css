@@ -19,15 +19,16 @@ html {
     font-family: sans-serif;
     font-size: 2.5em;
     padding-bottom: 0.5em;
-    border-bottom: 0.2rem solid rgb(56, 41, 41, 0.2);
+    border-bottom: 0.2rem solid #C8C8C8
 }
 
 .accordion {
-    border-bottom: 0.2rem solid rgb(56, 41, 41, 0.2);
+    border-bottom: 0.2rem solid #C8C8C8;
     cursor: pointer;
     color: rebeccapurple;
     transition: 0.2s all;
     overflow: hidden;
+    padding: 0.2em 0;
 }
 
 .accordion:last-child {
@@ -40,16 +41,23 @@ label.meme-title {
     font-weight: 600;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     cursor: pointer;
     transition: 0.2s;
     
 }
 
+.name-meme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
 .accordion input, .accordion-content {
-    display: none;
+    height: 0;
     text-align: center;
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .icon-plus {
@@ -60,34 +68,33 @@ label.meme-title {
     opacity: 1;
 }
 
-.accordion :checked ~ .accordion-content {
+.accordion :checked ~ label .accordion-content {
+    transform: scale(1);
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    transition: 0.2s;
+    transition: 0.2s all;
     overflow: hidden;
 }
 
 .picture {
-    transition: 0.2s;
+    transition: 0.2s ease;
     transform: scale(0.9);
+    width: auto;
+    height: auto;
     overflow: hidden;
 }
 
-.container-meme:hover .accordion .picture {
-    transform: scale(0.8);
-}
 
-.accordion :hover ~ .accordion-content {
+
+.accordion :hover ~ label .accordion-content {
     transform: scale(0.9);
-    display: block;
+    transition: 0.2s ease;
     overflow: hidden;
 }
 
-.accordion-content:hover {
-    display: block;
-}
 
 .container-meme {
     transition: 0.2s all;
@@ -100,11 +107,6 @@ label.meme-title {
     transition: transform 0.2s;
 }
 
-.container-meme:hover .meme-title {
-    color: #000;
-    transition: 0.2s;
-    overflow: hidden;
-}
 
 .container-meme:hover .meme-title {
     color: #000;
@@ -115,11 +117,7 @@ label.meme-title {
 :checked + .meme-title {
     color: #000;
     transition: 0.2s all;
-}
-
-.container-meme:hover .meme-title:active {
-    transition: 0.2s;
-    font-weight: bold;
+    overflow: hidden;
 }
 
 .container-meme .meme-title:hover .icon-plus {
@@ -132,13 +130,7 @@ label.meme-title {
     font-size: 1.5em;
 }
 
-.container-meme :checked + .meme-title  .icon-plus {
-    transform: rotate(315deg);
-    transition: 0.2s ease;
-}
-
-
-input[type=radio]:active~.meme-title {
+.name-meme:active {
     color: rebeccapurple;
 }
 
@@ -146,4 +138,13 @@ input[type=radio]:active~.meme-title {
     opacity: 0.5;
 }
 
+.accordion label:hover .accordion-content {
+    height: 10%;
+    transition: 0.2s ease;
+}
 
+@media (max-width: 820px) {
+    label.meme-title {
+        font-size: 1.6rem;
+    }
+}
