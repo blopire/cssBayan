@@ -156,7 +156,7 @@ label .accordion-content .picture:hover {
         font-size: 1.6rem;
     }
     .picture {
-        width: 10em;
+        width: 6em;
         height: auto;
     }
 }
