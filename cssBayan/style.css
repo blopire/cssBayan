@@ -1,0 +1,179 @@
+html {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color:bisque
+}
+
+.container-meme {
+    max-width: 50em;
+    min-height: 100vh;
+    margin: auto;
+    padding: 2em;
+    transition: 0.2s ease;
+}
+
+.title-container {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 0.2rem solid #C8C8C8;
+    transition: 0.2s ease;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.2rem solid #C8C8C8;
+    cursor: pointer;
+    color: rebeccapurple;
+    transition: all 0.6s ease-in-out;
+    overflow: hidden;
+}
+
+.accordion:last-child {
+    border: none;
+}
+
+label.meme-title {
+    font-family: sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.2s ease;
+    
+}
+
+.name-meme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.accordion input, .accordion-content {
+    height: 0;
+    transform: scale(0);
+    width: auto;
+    text-align: center;
+    transition: all 1s ease-in-out;
+}
+
+.accordion :checked ~ label .accordion-content {
+    height: 45%;
+    transform: scale(0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    transition: 0.2s ease;
+    overflow: hidden;
+}
+
+.accordion :checked ~ label .icon-plus {
+    transform: rotate(315deg);
+    transition: 0.2s ease;
+}
+
+.container-meme {
+    transition: all 0.6s ease-in-out;
+}
+
+.meme-title {
+    transition: all 0.6s ease-in-out;
+}
+
+:checked + .meme-title {
+    color: #000;
+    transition: 0.2s ease;
+}
+
+
+.icon-picture {
+    font-size: 1.5em;
+    transition: all 0.6s ease-in-out;
+}
+
+.picture {
+    border: 0.5em solid #C8C8C8;
+    transition: all 0.5s ease-in-out;
+}
+
+@media screen and (hover: hover) {
+    label:active .name-meme,
+    label:active .accordion-content {
+        color: rebeccapurple;
+        transition: all 0.1s ease;
+    }
+
+    .accordion label:active {
+        opacity: 0.5;
+        transition: all 0.1s ease-in-out;
+    }   
+
+    .icon-plus {
+        opacity: 0;
+    }
+
+    .container-meme:hover  .icon-plus {
+        opacity: 1;
+        transition: all 0.2s ease;
+    }   
+
+    .container-meme:hover .meme-title {
+        color: #000;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .container-meme .meme-title:hover .icon-plus {
+        transform: rotate(315deg);
+        transition: 0.2s ease;
+    }
+
+    .accordion label:hover .accordion-content {
+        height: 45%;
+        transform: scale(0.9);
+        width: auto;
+        transition: 0.5s ease-in-out;
+        overflow: hidden;
+    }
+
+    label .accordion-content .picture:hover {
+        transform: scale(0.9);
+    }  
+}
+
+@media screen and (min-width: 321px) and (max-width: 991px) {
+    .title-container {
+        font-size: 2.2em;
+    }
+
+    label .name-meme {
+        font-size: 1.6rem;
+    }
+
+    .picture {
+        width: 6em;
+        height: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .title-container {
+        font-size: 1.5em;
+    }
+
+    label .name-meme {
+        font-size: 1.2rem;
+    }
+
+    .picture {
+        width: 5em;
+        height: auto;
+    }
+}
