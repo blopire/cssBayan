@@ -19,11 +19,11 @@ html {
     font-family: sans-serif;
     font-size: 2.5em;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid black;
+    border-bottom: 0.2rem solid rgb(56, 41, 41, 0.2);
 }
 
 .accordion {
-    border-bottom: 1px solid black;
+    border-bottom: 0.2rem solid rgb(56, 41, 41, 0.2);
     cursor: pointer;
     color: rebeccapurple;
     transition: 0.2s all;
@@ -36,13 +36,14 @@ html {
 
 label.meme-title {
     font-family: sans-serif;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     transition: 0.2s;
+    
 }
 
 .accordion input, .accordion-content {
@@ -50,8 +51,6 @@ label.meme-title {
     text-align: center;
     transition: 0.2s;
 }
-
-
 
 .icon-plus {
     opacity: 0;
@@ -70,17 +69,6 @@ label.meme-title {
     overflow: hidden;
 }
 
-
-input .accordion-content:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    transition: 0.2s;
-    overflow: hidden;
-}
-
-
 .picture {
     transition: 0.2s;
     transform: scale(0.9);
@@ -92,10 +80,13 @@ input .accordion-content:hover {
 }
 
 .accordion :hover ~ .accordion-content {
-    height: 100%;
     transform: scale(0.9);
     display: block;
     overflow: hidden;
+}
+
+.accordion-content:hover {
+    display: block;
 }
 
 .container-meme {
@@ -138,7 +129,7 @@ input .accordion-content:hover {
 
 
 .icon-picture {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .container-meme :checked + .meme-title  .icon-plus {
